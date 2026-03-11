@@ -1,0 +1,66 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>PG Admin Login</title>
+
+<style>
+body{
+font-family:Arial;
+background:#667eea;
+text-align:center;
+padding:100px;
+}
+
+.box{
+background:white;
+padding:30px;
+width:300px;
+margin:auto;
+border-radius:10px;
+}
+
+input{
+width:90%;
+padding:10px;
+margin:10px;
+}
+
+button{
+padding:10px 20px;
+background:#667eea;
+color:white;
+border:none;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>PG Admin Login</h2>
+
+<input id="u" placeholder="Username">
+
+<input id="p" type="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+</div>
+
+<script>
+
+function login(){
+
+if(u.value=="admin" && p.value=="12345")
+location.href="admin.html"
+else
+alert("Wrong login")
+
+}
+
+</script>
+
+</body>
+</html>

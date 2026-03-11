@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>PG Weekly Menu</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:linear-gradient(135deg,#3f3f3f,#1b1a1b);
+padding:40px;
+color:white;
+text-align:center;
+}
+
+table{
+background:white;
+color:black;
+margin:auto;
+border-collapse: collapse;
+width:400px;
+}
+
+th,td{
+padding:10px;
+border:1px solid #ddd;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1  style="color: chartreuse;" >🍽 Somnath Boys PG  Menu</h1>
+
+<table>
+
+<tr>
+<th style="background-color:   lightgrey;">Day</th>
+<th style="background-color:   lightyellow;">Breakfast</th>
+<th style="background-color:   lightgreen;">Lunch</th>
+<th style="background-color:   lightblue;">Dinner</th>
+</tr>
+
+<tr>
+<td style="background-color: red;">Monday</td>
+<td id="m1">Thepla+Chai</td>
+<td id="m2">Mug+Bhat+Roti</td>
+<td id="m3">Allu Paratha+Chass or  Sukkhibhaji+Thepla</td>
+</tr>
+
+<tr>
+<td style="background-color: blue;">Tuesday</td>
+<td id="t1">Poha+Chai</td>
+<td id="t2">Bangan Allu+Roti+DalBhat</td>
+<td id="t3">Allu+Payaj Sbji+Roti</td>
+</tr>
+
+<tr>
+<td style="background-color: yellow;">Wednesday</td>
+<td id="m1">Kaman+Chai</td>
+<td id="m2">Channa+Roti+DalBhat</td>
+<td id="m3">SPACIAL</td>
+</tr>
+
+<tr>
+<td style="background-color: green;">Thursday</td>
+<td id="t1">Sev khamni+Chai</td>
+<td id="t2">Allu Bhindi+Roti+DalBhat</td>
+<td id="t3">Dal bhati</td>
+</tr>
+
+<tr>
+<td style="background-color: red;">Friday</td>
+<td id="m1">Tali Roti+Chai</td>
+<td id="m2">Batana+Roti+Dalbhat</td>
+<td id="m3">Dam Allu or Dahi thikari+Roti</td>
+</tr>
+
+<tr>
+<td style="background-color: orange">Saturday</td>
+<td id="t1">Gathyia+Chai</td>
+<td id="t2">Guwar Allu+Roti+DalBhat</td>
+<td id="t3">Sev tamatar+Khichri or Pulaw bhat</td>
+</tr>
+
+<tr>
+<td style="background-color: gray">Sunday</td>
+<td id="t1">Sev mambra or Massala Chana+Chai</td>
+<td id="t2">Idli Sambhar or Mix Khotor or Mix veg or Dal Fray Jira Rice or Dal Dhokli </td>
+<td id="t3"> SUNDAY FUN </td>
+</tr
+
+</table>
+
+<script>
+
+let data=JSON.parse(localStorage.getItem("pgmenu"))
+
+if(data){
+
+m1.innerText=data.m1
+m2.innerText=data.m2
+m3.innerText=data.m3
+
+t1.innerText=data.t1
+t2.innerText=data.t2
+t3.innerText=data.t3
+
+}
+
+</script>
+
+</body>
+</html>

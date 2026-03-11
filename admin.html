@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Weekly Menu Editor</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f4f4;
+padding:40px;
+}
+
+.container{
+background:white;
+padding:20px;
+width:500px;
+margin:auto;
+border-radius:10px;
+}
+
+input{
+width:100%;
+padding:8px;
+margin:5px;
+}
+
+button{
+padding:10px;
+background:#667eea;
+color:white;
+border:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Edit Weekly Menu</h2>
+
+<h3 style="background-color: red;">Monday</h3>
+<input id="m1" placeholder="Breakfast">
+<input id="m2" placeholder="Lunch">
+<input id="m3" placeholder="Dinner">
+
+<h3 style="background-color: blue;">Tuesday</h3>
+<input id="t1" placeholder="Breakfast">
+<input id="t2" placeholder="Lunch">
+<input id="t3" placeholder="Dinner">
+
+<h3 style="background-color: yellow;">Wednesday</h3>
+<input id="m1" placeholder="Breakfast">
+<input id="m2" placeholder="Lunch">
+<input id="m3" placeholder="Dinner">
+
+<h3 style="background-color: green;">Thursday</h3>
+<input id="t1" placeholder="Breakfast">
+<input id="t2" placeholder="Lunch">
+<input id="t3" placeholder="Dinner">
+
+<h3 style="background-color: red;">Friday</h3>
+<input id="m1" placeholder="Breakfast">
+<input id="m2" placeholder="Lunch">
+<input id="m3" placeholder="Dinner">
+
+<h3 style="background-color: orange;">Saturday</h3>
+<input id="t1" placeholder="Breakfast">
+<input id="t2" placeholder="Lunch">
+<input id="t3" placeholder="Dinner">
+
+<h3 style="background-color: gray;">Sunday</h3>
+<input id="t1" placeholder="Breakfast">
+<input id="t2" placeholder="Lunch">
+<input id="t3" placeholder="Dinner">
+<button onclick="save()">Save Menu</button>
+
+</div>
+
+<script>
+
+function save(){
+
+let menu={
+m1:m1.value,
+m2:m2.value,
+m3:m3.value,
+t1:t1.value,
+t2:t2.value,
+t3:t3.value
+}
+
+localStorage.setItem("pgmenu",JSON.stringify(menu))
+
+alert("Menu Saved")
+
+}
+
+</script>
+
+</body>
+</html>
