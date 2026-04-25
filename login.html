@@ -45,21 +45,33 @@ border:none;
 
 <input id="p" type="password" placeholder="Password">
 
-<button onclick="login()">Login</button>
+<button onclick="login()" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007bff'">Login</button>
 
 </div>
 
-<script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 
+<script>
 function login(){
 
-if(u.value=="admin" && p.value=="12345")
-location.href="admin.html"
-else
-alert("Wrong login")
+firebase.auth().signInWithEmailAndPassword(u.value, p.value)
+.then((userCredential) => {
+
+    let user = userCredential.user;
+
+    // Admin check
+    if(user.email === "admin@gmail.com"){
+        location.href = "admin.html";
+    }else{
+        location.href = "menu.html";
+    }
+
+})
+.catch((error) => {
+    alert(error.message);
+});
 
 }
-
 </script>
 
 </body>
