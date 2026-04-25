@@ -54,85 +54,106 @@ border:none;
 <input id="t3" placeholder="Dinner">
 
 <h3 style="background-color: yellow;">Wednesday</h3>
-<input id="m1" placeholder="Breakfast">
-<input id="m2" placeholder="Lunch">
-<input id="m3" placeholder="Dinner">
+<input id="w1" placeholder="Breakfast">
+<input id="w2" placeholder="Lunch">
+<input id="w3" placeholder="Dinner">
 
 <h3 style="background-color: green;">Thursday</h3>
-<input id="t1" placeholder="Breakfast">
-<input id="t2" placeholder="Lunch">
-<input id="t3" placeholder="Dinner">
+<input id="x1" placeholder="Breakfast">
+<input id="x2" placeholder="Lunch">
+<input id="x3" placeholder="Dinner">
 
 <h3 style="background-color: red;">Friday</h3>
-<input id="m1" placeholder="Breakfast">
-<input id="m2" placeholder="Lunch">
-<input id="m3" placeholder="Dinner">
+<input id="y1" placeholder="Breakfast">
+<input id="y2" placeholder="Lunch">
+<input id="y3" placeholder="Dinner">
 
 <h3 style="background-color: orange;">Saturday</h3>
-<input id="t1" placeholder="Breakfast">
-<input id="t2" placeholder="Lunch">
-<input id="t3" placeholder="Dinner">
+<input id="z1" placeholder="Breakfast">
+<input id="z2" placeholder="Lunch">
+<input id="z3" placeholder="Dinner">
 
 <h3 style="background-color: gray;">Sunday</h3>
-<input id="t1" placeholder="Breakfast">
-<input id="t2" placeholder="Lunch">
-<input id="t3" placeholder="Dinner">
-<button onclick="save()">Save Menu</button>
+<input id="a1" placeholder="Breakfast">
+<input id="a2" placeholder="Lunch">
+<input id="a3" placeholder="Dinner">
+
+<button class="btn btn-primary" type="button" onclick="saveMenu()" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007bff'">Save menu</button>
 
 </div>
 
-<script>
-
-function save(){
-
-let menu={
-m1:m1.value,
-m2:m2.value,
-m3:m3.value,
-t1:t1.value,
-t2:t2.value,
-t3:t3.value
-}
-
-localStorage.setItem("pgmenu",JSON.stringify(menu))
-
-alert("Menu Saved")
-
-}
-
-</script>
-
-</body>
-</html>
 
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 
-<script>
 
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyBiKZGZMtN89S-Z0_scHMunT2YN4nJzMHA",
-  authDomain: "pg-menu-sysyem.firebaseapp.com",
-  databaseURL: "https://pg-menu-sysyem-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "pg-menu-sysyem",
-  storageBucket: "pg-menu-sysyem.firebasestorage.app",
-  messagingSenderId: "1032446590017",
-  appId: "1:1032446590017:web:f5985c2f3d5fe56fd59ac0",
-  measurementId: "G-F8JL5H1EDX"
+
+<script>
+var firebaseConfig = {
+  apiKey: "SAME_API_KEY",
+  authDomain: "SAME_PROJECT.firebaseapp.com",
+  databaseURL: "https://SAME_PROJECT.firebaseio.com",
+  projectId: "SAME_PROJECT",
+  storageBucket: "SAME_PROJECT.appspot.com",
+  messagingSenderId: "XXXX",
+  appId: "XXXX"
 };
 
 firebase.initializeApp(firebaseConfig);
+</script>
+
+
+<script>
 
 function saveMenu(){
 
-firebase.database().ref("menu").set({
+let menu = {
 
-breakfast: breakfast.value,
-lunch: lunch.value,
-dinner: dinner.value
+monday:{
+breakfast: m1.value,
+lunch: m2.value,
+dinner: m3.value
+},
 
-});
+tuesday:{
+breakfast: t1.value,
+lunch: t2.value,
+dinner: t3.value
+},
+
+wednesday:{
+breakfast: w1.value,
+lunch: w2.value,
+dinner: w3.value
+},
+
+thursday:{
+breakfast: x1.value,
+lunch: x2.value,
+dinner: x3.value
+},
+
+friday:{
+breakfast: y1.value,
+lunch: y2.value,
+dinner: y3.value
+},
+
+saturday:{
+breakfast: z1.value,
+lunch: z2.value,
+dinner: z3.value
+},
+
+sunday:{
+breakfast: a1.value,
+lunch: a2.value,
+dinner: a3.value
+}
+
+};
+
+firebase.database().ref("menu").set(menu);
 
 alert("Menu Updated");
 
