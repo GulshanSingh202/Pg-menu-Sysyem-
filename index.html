@@ -2,15 +2,75 @@
 <html>
 <head>
 <title>PG Menu</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #74ebd5, #ACB6E5);
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        text-align: center;
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+        margin-bottom: 30px;
+        color: #333;
+    }
+
+    a {
+        display: inline-block;
+        margin: 10px;
+        padding: 12px 25px;
+        text-decoration: none;
+        font-size: 18px;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    /* Highlighted View Menu Button */
+    .view-btn {
+        background-color: #28a745;
+        color: white;
+        font-weight: bold;
+    }
+
+    .view-btn:hover {
+        background-color: #218838;
+        transform: scale(1.05);
+    }
+
+    /* Admin Button */
+    .login-btn {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .login-btn:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+</style>
+
 </head>
 
 <body>
 
-<h2>PG Menu System</h2>
+<div class="container">
+    <h2>PG Menu System</h2>
 
-<a href="menu.html">View Menu</a><br><br>
-<a href="login.html">Admin Login</a>
+    <a href="menu.html" class="view-btn">View Menu</a><br>
+    <a href="login.html" class="login-btn">Admin Login</a>
+</div>
 
 </body>
-
 </html>
