@@ -60,58 +60,110 @@ border:1px solid #ddd;
 
 <tr>
 <td style="background-color: yellow;">Wednesday</td>
-<td id="m1">Kaman+Chai</td>
-<td id="m2">Channa+Roti+DalBhat</td>
-<td id="m3">SPACIAL</td>
+<td id="w1">Kaman+Chai</td>
+<td id="w2">Channa+Roti+DalBhat</td>
+<td id="w3">SPACIAL</td>
 </tr>
 
 <tr>
 <td style="background-color: green;">Thursday</td>
-<td id="t1">Sev khamni+Chai</td>
-<td id="t2">Allu Bhindi+Roti+DalBhat</td>
-<td id="t3">Dal bhati</td>
+<td id="x1">Sev khamni+Chai</td>
+<td id="x2">Allu Bhindi+Roti+DalBhat</td>
+<td id="x3">Dal bhati</td>
 </tr>
 
 <tr>
 <td style="background-color: red;">Friday</td>
-<td id="m1">Tali Roti+Chai</td>
-<td id="m2">Batana+Roti+Dalbhat</td>
-<td id="m3">Dam Allu or Dahi thikari+Roti</td>
+<td id="y1">Tali Roti+Chai</td>
+<td id="y2">Batana+Roti+Dalbhat</td>
+<td id="y3">Dam Allu or Dahi thikari+Roti</td>
 </tr>
 
 <tr>
 <td style="background-color: orange">Saturday</td>
-<td id="t1">Gathyia+Chai</td>
-<td id="t2">Guwar Allu+Roti+DalBhat</td>
-<td id="t3">Sev tamatar+Khichri or Pulaw bhat</td>
+<td id="z1">Gathyia+Chai</td>
+<td id="z2">Guwar Allu+Roti+DalBhat</td>
+<td id="z3">Sev tamatar+Khichri or Pulaw bhat</td>
 </tr>
 
 <tr>
 <td style="background-color: gray">Sunday</td>
-<td id="t1">Sev mambra or Massala Chana+Chai</td>
-<td id="t2">Idli Sambhar or Mix Khotor or Mix veg or Dal Fray Jira Rice or Dal Dhokli </td>
-<td id="t3"> SUNDAY FUN </td>
-</tr
+<td id="a1">Sev mambra or Massala Chana+Chai</td>
+<td id="a2">Idli Sambhar or Mix Khotor or Mix veg or Dal Fray Jira Rice or Dal Dhokli </td>
+<td id="a3"> SUNDAY FUN </td>
+</tr>
 
 </table>
 
+
+<!-- Firebase Scripts -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<!-- Firebase Config -->
+<script>
+var firebaseConfig = {
+  apiKey: "SAME_API_KEY",
+  authDomain: "SAME_PROJECT.firebaseapp.com",
+  databaseURL: "https://SAME_PROJECT.firebaseio.com",
+  projectId: "SAME_PROJECT",
+  storageBucket: "SAME_PROJECT.appspot.com",
+  messagingSenderId: "XXXX",
+  appId: "XXXX"
+};
+
+firebase.initializeApp(firebaseConfig);
+</script>
+
 <script>
 
-let data=JSON.parse(localStorage.getItem("pgmenu"))
+firebase.database().ref("menu").on("value",(snapshot)=>{
+
+let data = snapshot.val();
 
 if(data){
 
-m1.innerText=data.m1
-m2.innerText=data.m2
-m3.innerText=data.m3
+// Monday
+m1.innerText = data.monday.breakfast
+m2.innerText = data.monday.lunch
+m3.innerText = data.monday.dinner
 
-t1.innerText=data.t1
-t2.innerText=data.t2
-t3.innerText=data.t3
+// Tuesday
+t1.innerText = data.tuesday.breakfast
+t2.innerText = data.tuesday.lunch
+t3.innerText = data.tuesday.dinner
+
+// Wednesday
+w1.innerText = data.wednesday.breakfast
+w2.innerText = data.wednesday.lunch
+w3.innerText = data.wednesday.dinner
+
+// Thursday
+x1.innerText = data.thursday.breakfast
+x2.innerText = data.thursday.lunch
+x3.innerText = data.thursday.dinner
+
+// Friday
+y1.innerText = data.friday.breakfast
+y2.innerText = data.friday.lunch
+y3.innerText = data.friday.dinner
+
+// Saturday
+z1.innerText = data.saturday.breakfast
+z2.innerText = data.saturday.lunch
+z3.innerText = data.saturday.dinner
+
+// Sunday
+a1.innerText = data.sunday.breakfast
+a2.innerText = data.sunday.lunch
+a3.innerText = data.sunday.dinner
 
 }
+
+});
 
 </script>
 
 </body>
 </html>
+
